@@ -339,9 +339,7 @@ def check_nonrep(N):
 
 
 def check_T2_T3():
-    for k in range(1, 82):
-        if get_dim(1, 2*k) < 2:
-            continue
+    for k in [12] + list(range(14, 82)):
         a2_T2 = get_a2_coeff(2, 1, 2*k)
         a2_T3 = get_a2_coeff(3, 1, 2*k)
         assert a2_T2 != a2_T3
@@ -387,7 +385,7 @@ elif ARG == 'check_nonrep_B':
     print(f'FINISHED: For each odd 101 <= N <= {N_MAX}, a2(T4(N,2k)) is non-repeating in k')
 elif ARG == 'check_T2_T3':
     check_T2_T3()
-    print('FINISHED: a2(T2(1,2k)) != a2(T3(1,2k)) for 1 <= k <= 81')
+    print('FINISHED: a2(T2(1,2k)) != a2(T3(1,2k)) for 12 <= k <= 81, k != 13')
 elif ARG == 'check_conj':
     check_conj()
 
